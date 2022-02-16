@@ -12,8 +12,8 @@
   }
   
   .memory-game {
-    width: 70vh;
-    height: 70vh;
+    width: 90vh;
+    height: 90vh;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -45,7 +45,7 @@
   .back-face {
     width: 100%;
     height: 100%;
-    padding: 5px;
+    padding: 1px;
     position: absolute;
     backface-visibility: hidden;
     border-radius: 1px;
@@ -62,8 +62,8 @@
     }
   
     .memory-card {
-      width: calc(25% - 8px);
-      height: calc(25% - 8px);
+      width: calc(25% - 1px);
+      height: calc(25% - 1px);
       margin: 4px;
     }
   
