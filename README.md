@@ -8,6 +8,6 @@ Features so far:
   - Purble pairs game:  
     - Basic game works. Matching tiles.
     - Ability to change grid size
-    - Timer (Currently counting in seconds), if it get's to zero the game resets
+    - Timer counting down in "minutes:seconds" format, when timer reaches zero you fail
+    - Upon matching a clock tile your time increases by 50 seconds
     - NO WIN FUNCTIONALITY YET
-    - NONE OF THE SPECIAL TILES HAVE FUNCIONALITY YET
