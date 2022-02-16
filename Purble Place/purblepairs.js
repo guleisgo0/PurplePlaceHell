@@ -63,10 +63,12 @@ function disableCards() {
 }
 
 function unflipCards() {
+    let firstCardOld = firstCard;
+    let secondCardOld = secondCard;
+    resetBoard();
     setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
-        resetBoard();
+        firstCardOld.classList.remove('flip');
+        secondCardOld.classList.remove('flip');
     }, 900);
 }
 
