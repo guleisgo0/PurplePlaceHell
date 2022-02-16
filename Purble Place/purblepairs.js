@@ -3,8 +3,8 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-
-let time = 210;
+let clock = "";
+let time = (35*size);
 
 let matched = 0;
 
@@ -51,11 +51,16 @@ function disableCards() {
 
     //console.log(firstCard.id);
     //document.getElementById(firstCard.id).src = "resources/cardback-nothing";
-
-    matched = matched +1;
-    if(matched == Math.floor(size/2))
+    console.log(firstCard);
+    console.log(clock);
+    if(firstCard == clock)
     {
-        console.log("win!");
+        time = time + 50;
+    }
+    if(matched == size)
+    {
+        window.alert("Win!!");
+        window.location.reload();
     }
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -99,7 +104,8 @@ document.getElementById("timer").innerHTML = "<b>" + time + " Seconds" + "</b>";
 }
 else
 {
-    console.log("lose");
+    window.alert("Out of time, you loose!!")
+    window.location.reload();
 }
 
 

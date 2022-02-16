@@ -23,7 +23,7 @@
     <div style="padding: 10px; color: aliceblue; font-size: 40pt;">
         <label>Timer:</label>
         <div id = "timer">
-            <b>210 Seconds</b>
+            <b>Seconds</b>
         </div>
     </div>
 
@@ -62,8 +62,8 @@
 
                 console.log(currentCards);
 
-                board.innerHTML = board.innerHTML + ' <div class="memory-card" data-name="' + currentC + '"><img class="front-face" id = "'+y+'" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
-                board.innerHTML = board.innerHTML + ' <div class="memory-card" data-name="' + currentC + '"><img class="front-face" id = "'+(y+1)+'" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
+                board.innerHTML = board.innerHTML + ' <div class="memory-card" data-name="' + currentC + '"><img class="front-face" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
+                board.innerHTML = board.innerHTML + ' <div class="memory-card" data-name="' + currentC + '"><img class="front-face" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
             }
         }
         generateBoard();
