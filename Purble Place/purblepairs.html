@@ -11,22 +11,24 @@
 
 <body>
 
-    <div style = "padding: 10px; color: aliceblue;">
+    <div style = "background-color: blue; padding: 50px; color: aliceblue;">
         <div>
             <label>Grid size:</label> <br>
             <input type="number" id="gridSize"></input>
         </div>
         <br>
         <button onclick="updateGrid();">Change size</button>
-    </div>
-
-    <div style="padding: 10px; color: aliceblue; font-size: 40pt;">
-        <label>Timer:</label>
-        <div id = "timer">
-            <b>Seconds</b>
+        <br><br><br><br><br><br>
+        <div style="padding: 10px; color: aliceblue; font-size: 40pt;">
+            <label>Timer:</label>
+            <div id = "timer">
+                <b></b>
+            </div>
         </div>
+    
     </div>
 
+    
     <section id="boardMain" class="memory-game">
     </section>
     <script>
@@ -62,8 +64,8 @@
 
                 console.log(currentCards);
 
-                board.innerHTML = board.innerHTML + ' <div class="memory-card" data-name="' + currentC + '"><img class="front-face" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
-                board.innerHTML = board.innerHTML + ' <div class="memory-card" data-name="' + currentC + '"><img class="front-face" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
+                board.innerHTML = board.innerHTML + ' <div id = "'+currentC+'"class="memory-card" data-name="' + currentC + '"><img class="front-face" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
+                board.innerHTML = board.innerHTML + ' <div id = "'+currentC+'"class="memory-card" data-name="' + currentC + '"><img class="front-face" src="resources/cardfront-' + currentC + '.png" alt="' + currentC + '"><img class="back-face" src="resources/cardback-clover.png" alt="Memory Card"></div>';
             }
         }
         generateBoard();

@@ -3,7 +3,6 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let clock = "";
 let time = (35*size);
 
 let matched = 0;
@@ -49,10 +48,22 @@ function checkForMatch() {
 
 function disableCards() {
 
-    //console.log(firstCard.id);
-    //document.getElementById(firstCard.id).src = "resources/cardback-nothing";
-    console.log(firstCard);
-    console.log(clock);
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+
+    firstCard.children[1].src = "resources/cardback-nothing.png";
+    secondCard.children[1].src = "resources/cardback-nothing.png";
+
+    console.log(firstCard.children[0]);
+   
+    let clock = document.getElementById("clock");
+    console.log(firstCard.children[1]);
+
+    if(clock == firstCard)
+    {
+        time = time + 50;
+    }
+
     if(firstCard == clock)
     {
         time = time + 50;
@@ -64,6 +75,7 @@ function disableCards() {
     }
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+ 
     resetBoard();
 }
 
@@ -85,7 +97,7 @@ function resetBoard() {
 }
 
 (function shuffle() {
-    cards.forEach(card => {
+    cards.forEach(card => { 
         let ramdomPos = Math.ceil(Math.random() * (24));
         card.style.order = ramdomPos;
     });
@@ -100,7 +112,14 @@ if( time > 0)
     
 
 time = time - 1;
-document.getElementById("timer").innerHTML = "<b>" + time + " Seconds" + "</b>";
+let writtenTime = "";
+if(time >= 60)
+{
+    writtenTime = Math.floor(time/60)+":"+(time - (Math.floor(time/60)*60) < 10 ? "0" + (time - (Math.floor(time/60)*60))  : time - (Math.floor(time/60)*60));
+}
+else{writtenTime = "0:"+time; document.getElementById("timer").style.color = "red";}
+
+document.getElementById("timer").innerHTML = "<b>" + writtenTime + "</b>";
 }
 else
 {

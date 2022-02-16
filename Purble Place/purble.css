@@ -9,6 +9,7 @@
     width: 100%;
     display: flex;
     background: #3d30d7;
+    background-image: url("resources/backgrounds/purblepairs.png");
   }
   
   .memory-game {
