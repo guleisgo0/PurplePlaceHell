@@ -117,7 +117,7 @@ if(time >= 60)
 {
     writtenTime = Math.floor(time/60)+":"+(time - (Math.floor(time/60)*60) < 10 ? "0" + (time - (Math.floor(time/60)*60))  : time - (Math.floor(time/60)*60));
 }
-else{writtenTime = "0:"+time; document.getElementById("timer").style.color = "red";}
+else{time < 10? writtenTime = "0:0"+time:writtenTime = "0:"+time; document.getElementById("timer").style.color = "red";}
 
 document.getElementById("timer").innerHTML = "<b>" + writtenTime + "</b>";
 }
